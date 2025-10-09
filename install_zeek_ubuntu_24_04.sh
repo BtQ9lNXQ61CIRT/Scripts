@@ -112,11 +112,9 @@ echo '##########################################################################
 echo 'Cron installed ... [Step 5/5]'
 echo '########################################################################################'
 
-rm ./install_zeek_ubuntu_24_04.sh
-
 echo ''
 echo '########################################################################################'
 echo 'Cleanup completed.'
-echo 'Zeek installation and configuration completed successfully.'
+echo 'Zeek installation and configuration completed.'
 echo '########################################################################################'
 
