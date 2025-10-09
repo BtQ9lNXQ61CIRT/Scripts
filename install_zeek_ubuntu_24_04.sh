@@ -16,16 +16,6 @@ if [[ $EUID -ne 0 ]]; then
 fi
 echo "Running as root..."
 
-if ping -c 1 -W 3 bt.bt &>/dev/null; then
-  echo "Ping successful: bt.bt is reachable."
-else
-  echo "Error: Cannot reach bt.bt."
-  echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-  echo "nameserver 8.8.4.4" >> /etc/resolv.conf
-  echo "nameserver 1.1.1.1" >> /etc/resolv.conf
-  netplan apply
-fi
-
 echo 'export HISTTIMEFORMAT="%F %T "' >> /etc/bash.bashrc
 echo 'export PROMPT_COMMAND="history -a"' >> /etc/bash.bashrc
 echo '########################################################################################'
