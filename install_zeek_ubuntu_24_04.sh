@@ -35,7 +35,7 @@ echo '##########################################################################
 
 echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_24.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
 #curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_24.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
-curl -fsSL https://github.com/BtQ9lNXQ61CIRT/Scripts/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
+curl -fsSL https://raw.githubusercontent.com/BtQ9lNXQ61CIRT/Scripts/refs/heads/main/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
 
 
 
