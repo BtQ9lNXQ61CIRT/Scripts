@@ -21,9 +21,10 @@ echo 'export PROMPT_COMMAND="history -a"' >> /etc/bash.bashrc
 echo '########################################################################################'
 echo 'Timestamped command history configuration completed ... [Step 1/5]'
 echo '########################################################################################'
+echo $(date +"%F %T") " Step 1 Completed ... " > zeek_installation.log
 
 
-echo 'deb http://download.opensuse.org/repositories/security:/zeek/xUbuntu_24.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
+echo 'deb https://download.opensuse.org/repositories/security:/zeek/xUbuntu_24.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
 #curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_24.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
 curl -fsSL https://raw.githubusercontent.com/BtQ9lNXQ61CIRT/Scripts/refs/heads/main/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
 
@@ -38,6 +39,7 @@ echo ''
 echo '########################################################################################'
 echo 'Zeek download and installation completed ... [Step 2/5]'
 echo '########################################################################################'
+echo $(date +"%F %T") " Step 2 Completed ... " > zeek_installation.log
 
 
 echo "export PATH=$PATH/:/opt/zeek/bin" >> ~/.bashrc
@@ -55,6 +57,7 @@ echo ''
 echo '########################################################################################'
 echo 'Zeek network configuration completed ... [Step 3/5]'
 echo '########################################################################################'
+echo $(date +"%F %T") " Step 3 Completed ... " > zeek_installation.log
 
 
 hash=$(openssl rand -hex 16)
@@ -91,13 +94,14 @@ redef record HTTP::Info += {
 /opt/zeek/bin/zeekctl install
 /opt/zeek/bin/zeekctl restart
 
-awk 'found==0 { if (sub("LogExpireInterval = 0","LogExpireInterval = 30 day")) found=1 } { print }' /opt/zeek/etc/zeekctl.cfg > /tmp/zeekctl.cfg
+awk 'found==0 { if (sub("LogExpireInterval = 0","LogExpireInterval = 100 day")) found=1 } { print }' /opt/zeek/etc/zeekctl.cfg > /tmp/zeekctl.cfg
 mv /tmp/zeekctl.cfg /opt/zeek/etc/zeekctl.cfg
 
 echo ''
 echo '########################################################################################'
 echo 'Zeek logs configuration completed ... [Step 4/5]'
 echo '########################################################################################'
+echo $(date +"%F %T") " Step 4 Completed ... " > zeek_installation.log
 
 
 (crontab -l; echo "") | crontab -
@@ -111,6 +115,9 @@ echo ''
 echo '########################################################################################'
 echo 'Cron installed ... [Step 5/5]'
 echo '########################################################################################'
+echo $(date +"%F %T") " Step 1 Completed ... " > zeek_installation.log
+[ -f "zeek_installation.log" ] && rm "zeek_installation.log"
+
 
 echo ''
 echo '########################################################################################'
