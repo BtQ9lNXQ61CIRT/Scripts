@@ -16,8 +16,12 @@ if [[ $EUID -ne 0 ]]; then
 fi
 echo "Running as root..."
 
-echo 'export HISTTIMEFORMAT="%F %T "' >> /etc/bash.bashrc
-echo 'export PROMPT_COMMAND="history -a"' >> /etc/bash.bashrc
+
+if ! grep -q 'export HISTTIMEFORMAT="%F %T "' /etc/bash.bashrc; then
+	echo 'export HISTTIMEFORMAT="%F %T "' >> /etc/bash.bashrc
+	echo 'export PROMPT_COMMAND="history -a"' >> /etc/bash.bashrc
+fi
+
 echo '########################################################################################'
 echo 'Timestamped command history configuration completed ... [Step 1/5]'
 echo '########################################################################################'
