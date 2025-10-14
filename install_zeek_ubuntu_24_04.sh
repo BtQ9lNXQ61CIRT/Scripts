@@ -46,6 +46,9 @@ echo 'Zeek download and installation completed ... [Step 2/5]'
 echo '########################################################################################'
 echo $(date +"%F %T") " Step 2 Completed ... " > zeek_installation.log
 
+# Temporary handler
+echo 'deb https://download.opensuse.org/repositories/security:/zeek/xUbuntu_24.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
+
 
 echo "export PATH=$PATH/:/opt/zeek/bin" >> ~/.bashrc
 source ~/.bashrc
