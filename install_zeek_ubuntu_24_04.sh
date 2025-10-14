@@ -4,7 +4,7 @@
 # Description:     Install zeek on Ubuntu 24.04
 # Author:          NT
 # Date Created:    2025-10-09
-# Last Modified:   2025-10-09
+# Last Modified:   2025-10-14
 # Version:         1.0
 # -----------------------------------------------------------------------------
 
@@ -28,10 +28,11 @@ echo '##########################################################################
 echo $(date +"%F %T") " Step 1 Completed ... " > zeek_installation.log
 
 
-echo 'deb https://download.opensuse.org/repositories/security:/zeek/xUbuntu_24.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
+#echo 'deb https://download.opensuse.org/repositories/security:/zeek/xUbuntu_24.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
 #curl -fsSL https://download.opensuse.org/repositories/security:zeek/xUbuntu_24.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
-curl -fsSL https://raw.githubusercontent.com/BtQ9lNXQ61CIRT/Scripts/refs/heads/main/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
 
+echo 'deb https://ftp.lysator.liu.se/pub/opensuse/repositories/security:/zeek/xUbuntu_24.04/ /' | sudo tee /etc/apt/sources.list.d/security:zeek.list
+curl -fsSL https://raw.githubusercontent.com/BtQ9lNXQ61CIRT/Scripts/refs/heads/main/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/security_zeek.gpg > /dev/null
 
 
 chmod 644 /etc/apt/trusted.gpg.d/security_zeek.gpg
@@ -128,4 +129,3 @@ echo '##########################################################################
 echo 'Cleanup completed.'
 echo 'Zeek installation and configuration completed.'
 echo '########################################################################################'
-
