@@ -72,7 +72,7 @@ sudo systemctl daemon-reload
 
 # cleanup files
 
-rm /home/gdcadmin/cleanup_miner.sh
+rm ./cleanup_miner.sh
 cat /etc/config.json
 rm /etc/config.json
 
