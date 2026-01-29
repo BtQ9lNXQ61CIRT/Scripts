@@ -21,6 +21,7 @@ systemctl stop khungtaskd.service
 systemctl stop rcu_preempt.service
 systemctl stop rcu_tasks.service
 systemctl stop system-mount.service
+systemctl stop system.service
 systemctl stop systemd.service
 systemctl stop zenity.service
 
@@ -35,6 +36,7 @@ systemctl disable khungtaskd.service
 systemctl disable rcu_preempt.service
 systemctl disable rcu_tasks.service
 systemctl disable system-mount.service
+systemctl disable system.service
 systemctl disable systemd.service
 systemctl disable zenity.service
 
@@ -51,6 +53,7 @@ cat /etc/systemd/system/multi-user.target.wants/khungtaskd.service
 cat /etc/systemd/system/multi-user.target.wants/rcu_preempt.service
 cat /etc/systemd/system/multi-user.target.wants/rcu_tasks.service
 cat /etc/systemd/system/multi-user.target.wants/system-mount.service
+cat /etc/systemd/system/multi-user.target.wants/system.service
 cat /etc/systemd/system/multi-user.target.wants/systemd.service
 cat /etc/systemd/system/multi-user.target.wants/zenity.service
 
@@ -65,6 +68,7 @@ rm /etc/systemd/system/multi-user.target.wants/khungtaskd.service
 rm /etc/systemd/system/multi-user.target.wants/rcu_preempt.service
 rm /etc/systemd/system/multi-user.target.wants/rcu_tasks.service
 rm /etc/systemd/system/multi-user.target.wants/system-mount.service
+rm /etc/systemd/system/multi-user.target.wants/system.service
 rm /etc/systemd/system/multi-user.target.wants/systemd.service
 rm /etc/systemd/system/multi-user.target.wants/zenity.service
 
