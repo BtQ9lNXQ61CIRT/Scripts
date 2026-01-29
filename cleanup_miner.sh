@@ -6,6 +6,7 @@ ls -all /tmp/
 sha256sum /tmp/c3pool_miner.sh
 stat /tmp/c3pool_miner.sh
 rm tmp/c3pool_miner.sh
+rm /tmp/setup_c3pool_miner2.sh
 
 
 # remove miner related services
