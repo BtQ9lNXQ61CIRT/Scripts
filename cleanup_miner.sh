@@ -43,6 +43,8 @@ systemctl disable system.service
 systemctl disable systemd.service
 systemctl disable zenity.service
 
+pkill -9 wget
+
 rm /etc/systemd/system/c3pool_miner.service
 
 cat /etc/systemd/system/multi-user.target.wants/c3pool_miner.service
