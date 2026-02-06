@@ -87,7 +87,12 @@ rm ./cleanup_miner.sh
 cat /etc/config.json
 rm /etc/config.json
 
+
+echo -e "\n######################################"
+echo "ACTIVE NETWORK CONNECTIONS"
 ss -tupnae | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | sort -nu | grep -Ev '0.0.0.0|127.0.0*'
+echo -e "\n######################################"
+
 
 # cleanup history - last 200
 
