@@ -22,6 +22,7 @@ systemctl stop kworker.service
 systemctl stop khungtask.service
 systemctl stop khungtaskd.service
 systemctl stop ksoftirqd.service
+systemctl stop migration.service
 systemctl stop rcu_preempt.service
 systemctl stop rcu_tasks.service
 systemctl stop system-mount.service
@@ -40,6 +41,7 @@ systemctl disable kworker.service
 systemctl disable khungtask.service
 systemctl disable khungtaskd.service
 systemctl disable ksoftirqd.service
+systemctl disable migration.service
 systemctl disable rcu_preempt.service
 systemctl disable rcu_tasks.service
 systemctl disable system-mount.service
@@ -62,6 +64,7 @@ cat /etc/systemd/system/multi-user.target.wants/kworker.service
 cat /etc/systemd/system/multi-user.target.wants/khungtask.service
 cat /etc/systemd/system/multi-user.target.wants/khungtaskd.service
 cat /etc/systemd/system/multi-user.target.wants/ksoftirqd.service
+cat /etc/systemd/system/multi-user.target.wants/migration.service
 cat /etc/systemd/system/multi-user.target.wants/rcu_preempt.service
 cat /etc/systemd/system/multi-user.target.wants/rcu_tasks.service
 cat /etc/systemd/system/multi-user.target.wants/system-mount.service
@@ -80,6 +83,7 @@ rm /etc/systemd/system/multi-user.target.wants/kworker.service
 rm /etc/systemd/system/multi-user.target.wants/khungtask.service
 rm /etc/systemd/system/multi-user.target.wants/khungtaskd.service
 rm /etc/systemd/system/multi-user.target.wants/ksoftirqd.service
+rm /etc/systemd/system/multi-user.target.wants/migration.service
 rm /etc/systemd/system/multi-user.target.wants/rcu_preempt.service
 rm /etc/systemd/system/multi-user.target.wants/rcu_tasks.service
 rm /etc/systemd/system/multi-user.target.wants/system-mount.service
