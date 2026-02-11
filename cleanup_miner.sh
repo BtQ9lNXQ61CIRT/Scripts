@@ -16,7 +16,6 @@ systemctl stop javasw.service
 systemctl stop zdump.service
 systemctl stop zdumpd.service
 systemctl stop kthread.service
-systemctl stop migration.service
 systemctl stop ksoftirq.service
 systemctl stop kworker.service
 systemctl stop khungtask.service
@@ -28,14 +27,16 @@ systemctl stop rcu_tasks.service
 systemctl stop system-mount.service
 systemctl stop system.service
 systemctl stop systemd.service
+systemctl stop xsubp.service
 systemctl stop zenity.service
+
+
 
 systemctl disable c3pool_miner.service
 systemctl disable zdump.service
 systemctl disable zdumpd.service
 systemctl disable javasw.service
 systemctl disable kthread.service
-systemctl disable migration.service
 systemctl disable ksoftirq.service
 systemctl disable kworker.service
 systemctl disable khungtask.service
@@ -47,6 +48,7 @@ systemctl disable rcu_tasks.service
 systemctl disable system-mount.service
 systemctl disable system.service
 systemctl disable systemd.service
+systemctl disable xsubp.service
 systemctl disable zenity.service
 
 pkill -9 wget
@@ -58,7 +60,6 @@ cat /etc/systemd/system/multi-user.target.wants/javasw.service
 cat /etc/systemd/system/multi-user.target.wants/zdump.service
 cat /etc/systemd/system/multi-user.target.wants/zdumpd.service
 cat /etc/systemd/system/multi-user.target.wants/kthread.service
-cat /etc/systemd/system/multi-user.target.wants/migration.service
 cat /etc/systemd/system/multi-user.target.wants/ksoftirq.service
 cat /etc/systemd/system/multi-user.target.wants/kworker.service
 cat /etc/systemd/system/multi-user.target.wants/khungtask.service
@@ -70,6 +71,7 @@ cat /etc/systemd/system/multi-user.target.wants/rcu_tasks.service
 cat /etc/systemd/system/multi-user.target.wants/system-mount.service
 cat /etc/systemd/system/multi-user.target.wants/system.service
 cat /etc/systemd/system/multi-user.target.wants/systemd.service
+cat /etc/systemd/system/multi-user.target.wants/xsubp.service
 cat /etc/systemd/system/multi-user.target.wants/zenity.service
 
 rm /etc/systemd/system/multi-user.target.wants/c3pool_miner.service
@@ -77,7 +79,6 @@ rm /etc/systemd/system/multi-user.target.wants/javasw.service
 rm /etc/systemd/system/multi-user.target.wants/zdump.service
 rm /etc/systemd/system/multi-user.target.wants/zdumpd.service
 rm /etc/systemd/system/multi-user.target.wants/kthread.service
-rm /etc/systemd/system/multi-user.target.wants/migration.service
 rm /etc/systemd/system/multi-user.target.wants/ksoftirq.service
 rm /etc/systemd/system/multi-user.target.wants/kworker.service
 rm /etc/systemd/system/multi-user.target.wants/khungtask.service
@@ -89,6 +90,7 @@ rm /etc/systemd/system/multi-user.target.wants/rcu_tasks.service
 rm /etc/systemd/system/multi-user.target.wants/system-mount.service
 rm /etc/systemd/system/multi-user.target.wants/system.service
 rm /etc/systemd/system/multi-user.target.wants/systemd.service
+rm /etc/systemd/system/multi-user.target.wants/xsubp.service
 rm /etc/systemd/system/multi-user.target.wants/zenity.service
 
 sudo systemctl daemon-reload
