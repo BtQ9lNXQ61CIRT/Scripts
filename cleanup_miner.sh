@@ -27,6 +27,7 @@ systemctl stop rcu_tasks.service
 systemctl stop system-mount.service
 systemctl stop system.service
 systemctl stop systemd.service
+systemctl stop xmessage.service
 systemctl stop xsubp.service
 systemctl stop zenity.service
 
@@ -48,6 +49,7 @@ systemctl disable rcu_tasks.service
 systemctl disable system-mount.service
 systemctl disable system.service
 systemctl disable systemd.service
+systemctl disable xmessage.service
 systemctl disable xsubp.service
 systemctl disable zenity.service
 
@@ -71,6 +73,7 @@ cat /etc/systemd/system/multi-user.target.wants/rcu_tasks.service
 cat /etc/systemd/system/multi-user.target.wants/system-mount.service
 cat /etc/systemd/system/multi-user.target.wants/system.service
 cat /etc/systemd/system/multi-user.target.wants/systemd.service
+cat /etc/systemd/system/multi-user.target.wants/xmessage.service
 cat /etc/systemd/system/multi-user.target.wants/xsubp.service
 cat /etc/systemd/system/multi-user.target.wants/zenity.service
 
@@ -90,6 +93,7 @@ rm /etc/systemd/system/multi-user.target.wants/rcu_tasks.service
 rm /etc/systemd/system/multi-user.target.wants/system-mount.service
 rm /etc/systemd/system/multi-user.target.wants/system.service
 rm /etc/systemd/system/multi-user.target.wants/systemd.service
+rm /etc/systemd/system/multi-user.target.wants/xmessage.service
 rm /etc/systemd/system/multi-user.target.wants/xsubp.service
 rm /etc/systemd/system/multi-user.target.wants/zenity.service
 
