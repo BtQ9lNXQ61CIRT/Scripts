@@ -15,6 +15,7 @@ systemctl stop c3pool_miner.service
 systemctl stop javasw.service
 systemctl stop zdump.service
 systemctl stop zdumpd.service
+systemctl stop kcompact.service
 systemctl stop kthread.service
 systemctl stop ksoftirq.service
 systemctl stop kworker.service
@@ -37,6 +38,7 @@ systemctl disable c3pool_miner.service
 systemctl disable zdump.service
 systemctl disable zdumpd.service
 systemctl disable javasw.service
+systemctl disable kcompact.service
 systemctl disable kthread.service
 systemctl disable ksoftirq.service
 systemctl disable kworker.service
@@ -61,6 +63,7 @@ cat /etc/systemd/system/multi-user.target.wants/c3pool_miner.service
 cat /etc/systemd/system/multi-user.target.wants/javasw.service
 cat /etc/systemd/system/multi-user.target.wants/zdump.service
 cat /etc/systemd/system/multi-user.target.wants/zdumpd.service
+cat /etc/systemd/system/multi-user.target.wants/kcompact.service
 cat /etc/systemd/system/multi-user.target.wants/kthread.service
 cat /etc/systemd/system/multi-user.target.wants/ksoftirq.service
 cat /etc/systemd/system/multi-user.target.wants/kworker.service
@@ -81,6 +84,7 @@ rm /etc/systemd/system/multi-user.target.wants/c3pool_miner.service
 rm /etc/systemd/system/multi-user.target.wants/javasw.service
 rm /etc/systemd/system/multi-user.target.wants/zdump.service
 rm /etc/systemd/system/multi-user.target.wants/zdumpd.service
+rm /etc/systemd/system/multi-user.target.wants/kcompact.service
 rm /etc/systemd/system/multi-user.target.wants/kthread.service
 rm /etc/systemd/system/multi-user.target.wants/ksoftirq.service
 rm /etc/systemd/system/multi-user.target.wants/kworker.service
@@ -104,6 +108,27 @@ sudo systemctl daemon-reload
 rm ./cleanup_miner.sh
 cat /etc/config.json
 rm /etc/config.json
+
+rm /usr/sbin/c3pool_miner
+rm /usr/sbin/javasw
+rm /usr/sbin/zdump
+rm /usr/sbin/zdumpd
+rm /usr/sbin/kcompact
+rm /usr/sbin/kthread
+rm /usr/sbin/ksoftirq
+rm /usr/sbin/kworker
+rm /usr/sbin/khungtask
+rm /usr/sbin/khungtaskd
+rm /usr/sbin/ksoftirqd
+rm /usr/sbin/migration
+rm /usr/sbin/rcu_preempt
+rm /usr/sbin/rcu_tasks
+rm /usr/sbin/mount
+rm /usr/sbin/system
+rm /usr/sbin/systemd
+rm /usr/sbin/xmessage
+rm /usr/sbin/xsubp
+rm /usr/sbin/zenity
 
 
 ### cleanup cron
