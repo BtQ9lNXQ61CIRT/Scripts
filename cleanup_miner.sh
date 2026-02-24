@@ -133,6 +133,7 @@ rm /usr/sbin/zenity
 
 ### cleanup cron
 :>/var/spool/cron/crontabs/root
+systemctl restart cron.service
 
 
 
