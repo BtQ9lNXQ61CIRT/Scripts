@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "Enter VLAN Name (Eg: MOIC): " VLAN
+read -p "Enter VLAN Name (Eg: MOIC): " VLAN < /dev/tty
 
 SEARCH="GovTech_BtCIRT_Honeypot"
 REPLACE=$SEARCH"_"$VLAN
