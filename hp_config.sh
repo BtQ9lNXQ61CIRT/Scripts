@@ -2,7 +2,7 @@
 
 read -p "Enter VLAN Name (Eg: MOIC_DMZ): " VLAN < /dev/tty
 
-SEARCH="GDC_Honeypot_Staging"
+SEARCH="GDC_Honeypot_Autonomous"
 REPLACE="GDC_Honeypot_"$VLAN
 FILE=/var/ossec/etc/ossec.conf
 
